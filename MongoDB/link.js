@@ -23,9 +23,9 @@ MongoClient.connect(uri, function(err, client) {
    }
 
    if(db_request == 2){
-     dbo.collection("customers").insertOne(data_holder, function(err, res) {
+     dbo.collection("customers").remove(data_holder, function(err, res) {
          if (err) throw err;
-         console.log("1 document inserted");
+         console.log("1 document removed");
          db.close();
        });
    }
